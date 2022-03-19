@@ -8,7 +8,7 @@
 
 
 // Defining the dimensions of checkerboard
-int CHECKERBOARD[2]{6,8}; // Shreyas + Manika
+int CHECKERBOARD[2]{6,8}; // FF:03-04-2022 (W,H)=(6,8) 70mm 
 // int CHECKERBOARD[2]{6,9}; // Siddarth + Manika
 
 int main()
@@ -32,7 +32,7 @@ int main()
   std::vector<cv::String> images;
 
   // Path of the folder containing checkerboard images
-  std::string path = "/home/bingai/Documents/Calibration/code/images/cornerDetection/";
+  std::string path = "/home/bingai/Documents/Calibration/data/cornerDetection/";
 
   cv::glob(path, images);
 
@@ -59,7 +59,8 @@ int main()
 
     // Finding checker board corners
     // If desired number of corners are found in the image then success = true  
-    success = cv::findChessboardCorners(gray,cv::Size(CHECKERBOARD[0],CHECKERBOARD[1]), corner_pts, cv::CALIB_CB_ADAPTIVE_THRESH | cv::CALIB_CB_FAST_CHECK | cv::CALIB_CB_NORMALIZE_IMAGE);
+    // success = cv::findChessboardCorners(gray,cv::Size(CHECKERBOARD[0],CHECKERBOARD[1]), corner_pts, cv::CALIB_CB_ADAPTIVE_THRESH | cv::CALIB_CB_FAST_CHECK | cv::CALIB_CB_NORMALIZE_IMAGE);
+    success = cv::findChessboardCornersSB(gray,cv::Size(CHECKERBOARD[0],CHECKERBOARD[1]), corner_pts, cv::CALIB_CB_ADAPTIVE_THRESH | cv::CALIB_CB_FAST_CHECK | cv::CALIB_CB_NORMALIZE_IMAGE);
     std::cout << "Corner Detection Success = " << success <<std::endl;
     
     /*
