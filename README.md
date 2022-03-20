@@ -15,3 +15,6 @@ Refer to the following to use the compiled files:
 
 ./build/cornerDetector
 ./build/cameraCalibration
+
+To get all the date with absolute path:
+ls $PWD/* -a
