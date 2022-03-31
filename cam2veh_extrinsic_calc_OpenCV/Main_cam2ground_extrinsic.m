@@ -1,7 +1,7 @@
 clc; clear;close all;
 
-%% Front Front
-% %Front deg0 Position1
+% %% Front Front
+%Front deg0 Position1
 % camera = 'front'
 % position = 'position1';
 % theta = 0;
@@ -70,7 +70,7 @@ clc; clear;close all;
 % position = 'position1';
 % theta = pi/2;
 
-%%Rear deg135 Position1
+% %%Rear deg135 Position1
 % camera = 'rear';
 % position = 'position1';
 % theta = 3*pi/4;
@@ -82,9 +82,9 @@ theta = pi;
 
 
 %check2ground
-H_check2ground = get_check2ground_extrinsic(theta,position,camera)
+H_check2ground = get_check2ground_extrinsic(theta, position, camera)
 % check2cam 
-H_check2cam = get_check2cam_extrinsic(theta,camera);
+H_check2cam = get_check2cam_extrinsic(theta, camera);
 
 H_cam2check = inv(H_check2cam);
 H_cam2ground = H_check2ground * H_cam2check;
